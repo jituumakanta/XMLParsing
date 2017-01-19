@@ -21,6 +21,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import android.app.Activity;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -30,7 +31,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-public class XMLParser {
+public class XMLParser extends Activity{
 
 	// constructor
 	public XMLParser() {
