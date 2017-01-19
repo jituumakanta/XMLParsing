@@ -19,6 +19,10 @@
             android:label="Single Menu Item"
             android:name=".SingleMenuItemActivity" >
         </activity>
+        <activity
+            android:label="Single Menu Item"
+            android:name=".XMLParser" >
+        </activity>
     </application>
 
 </manifest>

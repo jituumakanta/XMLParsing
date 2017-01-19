@@ -23,6 +23,7 @@ import org.xml.sax.SAXException;
 
 import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -67,6 +68,7 @@ public class XMLParser extends Activity{
 */
 	String xml = null;
 	public String getXmlFromUrl1(String url){
+
 		RequestQueue queue = Volley.newRequestQueue(this);
 
 // Request a string response from the provided URL.
@@ -75,7 +77,7 @@ public class XMLParser extends Activity{
 					@Override
 					public void onResponse(String response) {
 						xml =response.toString();
-
+						Toast.makeText(getApplicationContext(),xml,Toast.LENGTH_LONG).show();
 					}
 				}, new Response.ErrorListener() {
 			@Override
