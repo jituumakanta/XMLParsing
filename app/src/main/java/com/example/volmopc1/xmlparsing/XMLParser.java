@@ -8,12 +8,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.http.HttpEntity;
+/*import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
+import org.apache.http.util.EntityUtils;*/
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -42,7 +42,7 @@ public class XMLParser extends Activity{
 	 * Getting XML from URL making HTTP request
 	 * @param url string
 	 * */
-	public String getXmlFromUrl(String url) {
+	/*public String getXmlFromUrl(String url) {
 		String xml = null;
 
 		try {
@@ -64,16 +64,17 @@ public class XMLParser extends Activity{
 		// return XML
 		return xml;
 	}
-
+*/
+	String xml = null;
 	public String getXmlFromUrl1(String url){
 		RequestQueue queue = Volley.newRequestQueue(this);
-		String xml = null;
+
 // Request a string response from the provided URL.
 		StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-						xml=response;
+						xml =response.toString();
 
 					}
 				}, new Response.ErrorListener() {
@@ -84,10 +85,12 @@ public class XMLParser extends Activity{
 		});
 // Add the request to the RequestQueue.
 		queue.add(stringRequest);
+		return xml;
 	}
+
 	/**
 	 * Getting XML DOM element
-	 * @param XML string
+	 * //@param XML string
 	 * */
 	public Document getDomElement(String xml){
 		Document doc = null;
@@ -133,8 +136,8 @@ public class XMLParser extends Activity{
 	 
 	 /**
 	  * Getting node value
-	  * @param Element node
-	  * @param key string
+	  * //@param Element node
+	  * //@param key string
 	  * */
 	 public String getValue(Element item, String str) {		
 			NodeList n = item.getElementsByTagName(str);		

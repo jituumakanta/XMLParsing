@@ -37,7 +37,8 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		ArrayList<HashMap<String, String>> menuItems = new ArrayList<HashMap<String, String>>();
 
 		XMLParser parser = new XMLParser();
-		String xml = parser.getXmlFromUrl(URL); // getting XML
+		//String xml = parser.getXmlFromUrl(URL); // getting XML
+		String xml= parser.getXmlFromUrl1(URL);
 		Document doc = parser.getDomElement(xml); // getting DOM element
 
 		NodeList nl = doc.getElementsByTagName(KEY_ITEM);
